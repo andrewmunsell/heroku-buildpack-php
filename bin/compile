@@ -295,6 +295,9 @@ fi
 # no need for the token to stay around in the env
 unset COMPOSER_GITHUB_OAUTH_TOKEN
 
+# Fix Git directory leak
+unset GIT_DIR
+
 # install dependencies
 composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction | indent
 
